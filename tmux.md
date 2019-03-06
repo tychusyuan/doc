@@ -1,6 +1,6 @@
-#tmux简明手册
+# tmux简明手册
 
-##新建一个session
+## 新建一个session
 ```shell
 tmux # 匿名会话
 tmux new -s demo # 命名会话 
@@ -20,7 +20,7 @@ tmux ls # 查看所有会话，提倡使用简写形式
 tmux a # 默认进入第一个会话
 tmux a -t demo # 进入到名称为demo的会话
 ```
-##清理session
+## 清理session
 ```shell
 tmux kill-session -t demo # 关闭demo会话
 tmux kill-server # 关闭服务器，所有的会话都将关闭
