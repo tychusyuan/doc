@@ -1,4 +1,5 @@
 #tmux简明手册
+
 ##新建一个session
 ```shell
 tmux # 匿名会话
