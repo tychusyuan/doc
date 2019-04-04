@@ -8,3 +8,10 @@ sudo pmset -a GPUSwitch 1
 ### 自动切换
 sudo pmset -a GPUSwitch 2
 ```
+
+## 黑苹果
+### 引导时卡在一堆加号 ++++
+``` shell
+Kernel and Kexts Patches->kernelPm 勾选
+或者Driverx64UEFI缺少驱动，升级clover 补选一下驱动
+```
