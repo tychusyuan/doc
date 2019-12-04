@@ -9,6 +9,14 @@ virtualenv -p python3.8 --no-site-packages venv
 vscode配置中搜索 Python: Python Path
 ${workspaceFolder}/venv/bin/python
 ```
+
+## python 分组替换
+```python
+re.sub(r"^([a-zA-Z]+)([0-9]+)([\.]{1}[\w\.]+)$",r"\1*\3","file1.market.xiaomi.com")
+
+file*.market.xiaomi.com
+```
+
 ## python list 排序
 ```python
 # 简单的dict
