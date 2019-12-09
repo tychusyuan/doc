@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>html测速</title>
+</head>
+<body>
+<script>
+function measureBW(fn,time,testurl) {
+    time = time || 1;
+    var startTime, endTime, fileSize;
+    var count = time ;
+    var _this = this;
+    function measureBWSimple () {
+
+        var xhr = new XMLHttpRequest();
+
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                if(!fileSize){
+                    fileSize = xhr.responseText.length;
+                }
+                count --;
+                if(count<=0){
+                    endTime = Date.now();
+                    var speed = fileSize * time  / ((endTime - startTime)/1000) / 1024;
+                    fn && fn(Math.floor(speed));
+                }
+            }
+        }
+        xhr.open("GET", testurl, true);
+        xhr.send();
+    }
+    startTime = Date.now();
+    for(var x = time;x>0;x--){
+        measureBWSimple()
+    }
+}
+
+measureBW((speed)=>{
+    document.write(speed + " KB/sec");  //913 KB/sec
+},10,"https://upload.wikimedia.org/wikipedia/commons/5/51/Google.png")
+
+</script>
+</body>
+</html>
