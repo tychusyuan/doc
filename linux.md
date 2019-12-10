@@ -24,3 +24,13 @@ sort file |uniq -u
 ```
 第一条命令将重复的多行变为一行！
 第二条命令是将有重复的行全部去掉！
+
+### CentOS 8 开启 BBR
+```shell
+echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
+echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
+sysctl -p
+reboot
+sysctl -n net.ipv4.tcp_congestion_control
+lsmod | grep bbr
+```
