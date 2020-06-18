@@ -3,6 +3,8 @@
 ## 创建python虚拟环境
 ```shell
 virtualenv -p python3.8 --no-site-packages venv
+source venv/bin/activate
+pip install --upgrade pip
 ```
 ## 配置vscode python 解释器
 ```shell
