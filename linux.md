@@ -45,3 +45,9 @@ sudo swapon /opt/images/swap
 sudo swapoff /opt/images/swap
 sudo rm -f /opt/images/swap
 ```
+
+### 链接缺失
+```shell
+sudo echo "include /usr/local/lib" >> /etc/ld.so.conf
+sudo ldconfig 
+```
