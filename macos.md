@@ -16,7 +16,7 @@ Kernel and Kexts Patches->kernelPm 勾选
 或者Driverx64UEFI缺少驱动，升级clover 补选一下驱动
 ```
 
-# proxy list
+## proxy list
 ``` shell
 vim ~/.zshrc
 
