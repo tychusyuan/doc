@@ -15,3 +15,11 @@ sudo pmset -a GPUSwitch 2
 Kernel and Kexts Patches->kernelPm 勾选
 或者Driverx64UEFI缺少驱动，升级clover 补选一下驱动
 ```
+
+# proxy list
+``` shell
+vim ~/.zshrc
+
+alias proxy='export all_proxy=socks5://127.0.0.1:1080'
+alias unproxy='unset all_proxy'
+```
