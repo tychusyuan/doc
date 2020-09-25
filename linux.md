@@ -51,3 +51,8 @@ sudo rm -f /opt/images/swap
 sudo echo "include /usr/local/lib" >> /etc/ld.so.conf
 sudo ldconfig 
 ```
+
+### 测试cdn加速
+```shell
+curl -vk --output /dev/null --header "Host:gimg.cdn.pandora.xiaomi.com" https://gimg.cdn.pc.mi.com.w.alikunlun.com/c1738ab9b8a660e139dfca0f12457fc2.webp
+```
