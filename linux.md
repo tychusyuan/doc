@@ -34,6 +34,29 @@ reboot
 sysctl -n net.ipv4.tcp_congestion_control
 lsmod | grep bbr
 ```
+
+### 配置terminal proxy
+```shell
+alias proxy="
+    export http_proxy=socks5://127.0.0.1:1080;
+    export https_proxy=socks5://127.0.0.1:1080;
+    export all_proxy=socks5://127.0.0.1:1080;
+    export no_proxy=socks5://127.0.0.1:1080;
+    export HTTP_PROXY=socks5://127.0.0.1:1080;
+    export HTTPS_PROXY=socks5://127.0.0.1:1080;
+    export ALL_PROXY=socks5://127.0.0.1:1080;
+    export NO_PROXY=socks5://127.0.0.1:1080;"
+alias unproxy="
+    unset http_proxy;
+    unset https_proxy;
+    unset all_proxy;
+    unset no_proxy;
+    unset HTTP_PROXY;
+    unset HTTPS_PROXY;
+    unset ALL_PROXY;
+    unset NO_PROXY"
+```
+
 ### 挂载swap
 ```shell
 sudo mkdir /opt/images/
