@@ -1,0 +1,25 @@
+Some users will not see above mentioned option in Windows 10 Settings app due to missing or incompatible hardware drivers.
+
+Don't worry! You can take help of following registry tweak to restore "Users must enter a user name and password to use this computer" checkbox:
+
+1. Press WIN+R keys together to launch RUN dialog box. Now type regedit and press Enter. It'll open Registry Editor.
+
+2. Now go to following key:
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\PasswordLess\Device
+
+3. In right-side pane, look for DevicePasswordLessBuildVersion DWORD.
+
+The value of this DWORD would be set to 2 in your device.
+
+Double-click on DevicePasswordLessBuildVersion and change its value to 0
+
+https://media.askvg.com/articles/images8/Disable_Passwordless_Login_Windows_Hello_Feature_Windows_10_Registry_Editor.png
+
+That's it. Now open "control userpasswords2" or "netplwiz" programs and you'll get "Users must enter a user name and password to use this computer" checkbox back.
+
+PS: If you don't want to modify Registry Editor manually or if you can't see above mentioned key in Registry, you can run following command in Command Prompt directly:
+
+reg ADD "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\PasswordLess\Device" /v DevicePasswordLessBuildVersion /t REG_DWORD /d 0 /f
+
+It'll do the same job and bring back missing checkbox in Windows 10.
