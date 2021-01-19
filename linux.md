@@ -79,3 +79,8 @@ sudo ldconfig
 ```shell
 curl -vk --output /dev/null --header "Host:gimg.cdn.pandora.xiaomi.com" https://gimg.cdn.pc.mi.com.w.alikunlun.com/c1738ab9b8a660e139dfca0f12457fc2.webp
 ```
+
+### 测试cpu速度
+```shell
+time echo "scale=5000; 4*a(1)" | bc -l -q
+```
