@@ -17,3 +17,10 @@ git stash #把所有没有提交的修改暂存到stash里面。可用git stash 
 git reset --hard HASH #返回到某个节点，不保留修改。
 
 git reset --soft HASH #返回到某个节点。保留修改
+
+## 配置代理
+git config --global http.proxy 'http://10.0.0.200:1080'
+git config --global https.proxy 'http://10.0.0.200:1080'
+
+## https storage
+git config credential.helper 'store'
